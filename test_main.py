@@ -13,7 +13,7 @@ def test_health():
 
 def test_create_task():
     response = client.post("/tasks", json={"title": "Write tests"})
-    assert response.status_code == 420
+    assert response.status_code == 201
     body = response.json()
     assert body["title"] == "Write tests"
     assert body["done"] is False
